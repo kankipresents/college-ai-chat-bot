@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chatbot - College Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Chat App Container -->
+<div class="chat-app">
+ 
+
+
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="header-left">
+               
+            <h2>AI Chatbot <button id="themeToggle" onclick="toggleDarkMode()">🌙</button></h2>
+        </div>
+        <div class="header-right">
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+
+    <!-- College Info (like WhatsApp status) -->
+    <div class="college-info">
+        <strong>USHA RAMA College of Engineering</strong><br>
+        Dept: Computer Science | Project: AI Chatbot with Admin Panel<br>
+        Student: PITHAMBARESWAR | Roll No: 23466-CM-061<br>
+        Guide: Prof. KAMAL | Year: 2025-26
+    </div>
+
+    <!-- Chat Box -->
+    <div id="chat-box" class="chat-box">
+        <div class="bot message">
+            <span class="msg-text">Hello! I am your AI assistant. Ask me anything about the project.</span>
+            <span class="msg-time">10:00 AM</span>
+        </div>
+    </div>
+    <!--download chat-->
+    <!-- Input Area -->
+<div class="chat-input">
+    <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKey(event)">
+    
+    <button onclick="startVoice()" id="voice-btn">🎤</button>
+    
+    <button onclick="sendMessage()">➤</button>
+</div>
+
+
+<!-- Download Chat Button -->
+<button class="download-btn" onclick="downloadChat()">
+    ⬇ Download Chat
+</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

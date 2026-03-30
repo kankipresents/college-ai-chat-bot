@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - College Project</title>
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+    <!-- Chat History -->
+<div id="chats" class="tab-content" style="display:none;">
+    <h3>Chat History</h3>
+    <ul id="chat-history" class="chat-history"></ul>
+    <button onclick="clearChats()" class="danger-btn">Clear Chats</button>
+    <button onclick="downloadChats()" class="download-btn">Download Chats</button>
+</div>
+
+
+<div class="admin-app">
+
+    <!-- Header -->
+    <div class="admin-header">
+        <h2>Admin Dashboard</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Login Section -->
+    <div id="login-section" class="admin-section">
+        <h3>Admin Login</h3>
+        <input type="text" id="admin-username" placeholder="Username">
+        <input type="password" id="admin-password" placeholder="Password">
+        <button onclick="adminLogin()">Login</button>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="admin-panel" class="admin-section" style="display:none;">
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+            <div class="stat-card">
+                <h4>Total FAQs</h4>
+                <p id="total-faqs">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total Chats</h4>
+                <p id="total-chats">0</p>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('college')">College Details</button>
+            <button class="tab-btn" onclick="openTab('faqs')">FAQs</button>
+            <button class="tab-btn" onclick="openTab('chats')">Chat History</button>
+        </div>
+
+        <!-- Tab Contents -->
+
+        <!-- College Details -->
+        <div id="college" class="tab-content">
+            <h3>College / Project Details</h3>
+            <input type="text" id="college-name" placeholder="College Name">
+            <input type="text" id="department" placeholder="Department">
+            <input type="text" id="project-title" placeholder="Project Title">
+            <input type="text" id="student-name" placeholder="Student Name">
+            <input type="text" id="roll-number" placeholder="Roll Number">
+            <input type="text" id="guide-name" placeholder="Guide Name">
+            <input type="text" id="academic-year" placeholder="Academic Year">
+            <button onclick="saveCollegeDetails()">Save Details</button>
+        </div>
+
+        <!-- FAQ Management -->
+        <div id="faqs" class="tab-content" style="display:none;">
+            <h3>Manage FAQs</h3>
+            <div class="add-faq">
+                <input type="text" id="question" placeholder="Question">
+                <input type="text" id="answer" placeholder="Answer">
+                <button onclick="addFAQ()">Add FAQ</button>
+            </div>
+            <ul id="faq-list" class="faq-list"></ul>
+        </div>
+
+        <!-- Chat History -->
+        <div id="chats" class="tab-content" style="display:none;">
+            <h3>Chat History</h3>
+            <ul id="chat-history" class="chat-history"></ul>
+            <button onclick="clearChats()" class="danger-btn">Clear Chats</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Tabs Function
+    function openTab(tabName) {
+        const contents = document.querySelectorAll(".tab-content");
+        const buttons = document.querySelectorAll(".tab-btn");
+
+        contents.forEach(c => c.style.display = "none");
+        buttons.forEach(b => b.classList.remove("active"));
+
+        document.getElementById(tabName).style.display = "block";
+        event.currentTarget.classList.add("active");
+    }
+</script>
+</body>
+</html>
